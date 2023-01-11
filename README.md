@@ -29,7 +29,7 @@ Design and implement a REST API using Hibernate/Spring/SpringMVC (Spring-Boot pr
 
 
 
-<a href=https://postman.com/okhapka/workspace/lunchroom-vote>Link to the Postman collection of application with endpoints. Use desktop Postman</a>
+<a href=https://postman.com/okhapka/workspace/lunchroom-vote>Testing the web API with Postman collections, including endpoints and body, is available at this link. Use desktop Postman</a>
 
 ![img.png](img.png)
 
