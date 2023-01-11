@@ -23,7 +23,7 @@ import static com.topjava.lunchroom_vote.util.SecurityUtil.authUserId;
 @Slf4j
 public class VoteProfileRestController {
 
-    static final String REST_URL = "/api/profile/votes";
+    static final String REST_URL = "/api/user/profile/votes";
 
     private final VoteService service;
 

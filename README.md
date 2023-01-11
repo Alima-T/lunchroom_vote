@@ -94,16 +94,16 @@ CURL:
 
 ### ***VoteUser***
 
-- <a href="http://localhost:8080/api/profile/votes">List of Votes of User id=100000</a>
+- <a href="http://localhost:8080/api/user/profile/votes">List of Votes of User id=100000</a>
 - <a href="http://localhost:8080/api/profile/votes?restaurantId=100007">Create Vote by User in Restaurant id=100007</a>
 - <a href="http://localhost:8080/api/profile/votes/100040?restaurantId=100007">Update by User Vote id=100040 in
   Restaurant id=00007</a>
 
 CURL:
 
-    curl -s http://localhost:8080/api/profile/votes --user bob@gmail.com:password
-    curl -s -X POST -d '{"restaurantId": "100007"}' -H 'Content-Type: application/json;charset=UTF-8' http://localhost:8080/api/profile/votes?restaurantId=100007 --user bob@gmail.com:password
-    curl -s -X PUT -d '{"restaurantId": "100010"}' -H 'Content-Type: application/json' http://localhost:8080/api/profile/votes/100037?restaurantId=100010 --user bob@gmail.com:password
+    curl -s http://localhost:8080/api/user/profile/votes --user bob@gmail.com:password
+    curl -s -X POST -d '{"restaurantId": "100007"}' -H 'Content-Type: application/json;charset=UTF-8' http://localhost:8080/api/user/profile/votes?restaurantId=100007 --user bob@gmail.com:password
+    curl -s -X PUT -d '{"restaurantId": "100010"}' -H 'Content-Type: application/json' http://localhost:8080/api/user/profile/votes/100037?restaurantId=100010 --user bob@gmail.com:password
 
 ==================
 
@@ -131,13 +131,13 @@ CURL:
 
 ### ***RestaurantUser***
 
-- <a href="http://localhost:8080/api/restaurants/menu">List of Restaurants with menu</a>
-- <a href="http://localhost:8080/api/restaurants/100010/menu">Menu from Restaurant id=100010 for current day</a>
+- <a href="http://localhost:8080/api/user/restaurants/menu">List of Restaurants with menu</a>
+- <a href="http://localhost:8080/api/user/restaurants/100010/menu">Menu from Restaurant id=100010 for current day</a>
 
 CURL:
 
-    curl -s http://localhost:8080/api/restaurants/menu --user bob@gmail.com:password
-    curl -s http://localhost:8080/api/restaurants/100010/menu --user bob@gmail.com:password
+    curl -s http://localhost:8080/api/user/restaurants/menu --user bob@gmail.com:password
+    curl -s http://localhost:8080/api/user/restaurants/100010/menu --user bob@gmail.com:password
 
 ==================
 
@@ -163,14 +163,14 @@ CURL:
 
 ## User
 
-- <a href="http://localhost:8080/api/profile">User's profile</a>
-- <a href="http://localhost:8080/api/profile">Create new User - new registration</a>
-- <a href="http://localhost:8080/api/profile/100000">Update User id=100000 </a>
-- <a href="http://localhost:8080/api/profile/100000">Delete User id=100000 </a>
+- <a href="http://localhost:8080/api/user/profile">User's profile</a>
+- <a href="http://localhost:8080/api/user/profile">Create new User - new registration</a>
+- <a href="http://localhost:8080/api/user/profile/100000">Update User id=100000 </a>
+- <a href="http://localhost:8080/api/user/profile/100000">Delete User id=100000 </a>
 
 CURL:
 
-     curl -s 'http://localhost:8080/api/profile --user bob@gmail.com:password'
-     curl -s -X POST -d '{"name": "New User", "email": "new_user@gmail.com", "password": "password"}' -H 'Content-Type: application/json;charset=UTF-8' http://localhost:8080/api/profile'
-     curl -s -X PUT -d '{"name": "Updated user", "email": "updated_user@gmail.com", "password": "password"}' -H 'Content-Type: application/json' http://localhost:8080/api/profile --user bob@gmail.com:password'
-     curl -s -X DELETE 'http://localhost:8080/api/profile --user bob@gmail.com:password'
+     curl -s 'http://localhost:8080/api/user/profile --user bob@gmail.com:password'
+     curl -s -X POST -d '{"name": "New User", "email": "new_user@gmail.com", "password": "password"}' -H 'Content-Type: application/json;charset=UTF-8' http://localhost:8080/api/user/profile'
+     curl -s -X PUT -d '{"name": "Updated user", "email": "updated_user@gmail.com", "password": "password"}' -H 'Content-Type: application/json' http://localhost:8080/api/user/profile --user bob@gmail.com:password'
+     curl -s -X DELETE 'http://localhost:8080/api/user/profile --user bob@gmail.com:password'

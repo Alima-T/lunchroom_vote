@@ -20,7 +20,7 @@ import java.util.List;
 @Slf4j
 public class RestaurantUserRestController {
 
-    static final String REST_URL = "/api/restaurants";
+    static final String REST_URL = "/api/user/restaurants";
 
     private final RestaurantService service;
 

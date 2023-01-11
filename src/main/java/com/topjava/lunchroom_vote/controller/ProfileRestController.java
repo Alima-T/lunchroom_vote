@@ -29,7 +29,7 @@ import static com.topjava.lunchroom_vote.util.ValidationUtil.assureIdConsistent;
 @Slf4j
 public class ProfileRestController {
 
-    static final String REST_URL = "/api/profile";
+    static final String REST_URL = "/api/user/profile";
 
     private final UserService service;
 
