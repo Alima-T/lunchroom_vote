@@ -19,7 +19,7 @@ public interface HasId {
     }
 
     default int id() {
-        Assert.notNull(getId(), "Entity must has id");
+        Assert.notNull(getId(), "Entity can not be without id");
         return getId();
     }
 }

@@ -75,7 +75,7 @@ public class VoteService {
 
     @Transactional
     public void update(int id, int restaurantId) {
-        Vote vote = repository.findById(id).orElseThrow(() -> new OutOfTimeException("Voting time ended at 11 am, now " + LocalTime.now()));
+        Vote vote = repository.findById(id).orElseThrow(() -> new OutOfTimeException("Voting time ended at 11.00 a.m., now is " + LocalTime.now()));
         Assert.notNull(vote, "Vote can not be empty");
         assureIdConsistent(vote, vote.id());
         votingTimeVerification(clock);

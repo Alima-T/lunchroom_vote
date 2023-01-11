@@ -16,7 +16,7 @@ public class JsonUtil {
         try {
             return getMapper().writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            throw new IllegalStateException("Invalid write to JSON:\n'" + obj + "'", e);
+            throw new IllegalStateException("Incorrect JSON writing:\n'" + obj + "'", e);
         }
     }
 

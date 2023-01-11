@@ -50,6 +50,14 @@ public class ExceptionInfoHandler {
         return logAndGetErrorInfo(req, e, true, DATA_ERROR);
     }
 
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ExceptionHandler(BindException.class)
+    public ErrorInfo handleValidationError(HttpServletRequest req, BindException e) {
+        String[] details = e.getBindingResult().getFieldErrors().stream()
+                .map(fe -> String.format("[%s] %s", fe.getField(), fe.getDefaultMessage()))
+                .toArray(String[]::new);
+        return logAndGetErrorInfo(req, e, false, VALIDATION_ERROR, details);
+    }
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)  // 422
     @ExceptionHandler({IllegalRequestDataException.class, MethodArgumentTypeMismatchException.class, HttpMessageNotReadableException.class})
     public ErrorInfo illegalRequestDataError(HttpServletRequest req, Exception e) {
@@ -62,12 +70,5 @@ public class ExceptionInfoHandler {
         return logAndGetErrorInfo(req, e, true, APP_ERROR);
     }
 
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    @ExceptionHandler(BindException.class)
-    public ErrorInfo handleValidationError(HttpServletRequest req, BindException e) {
-        String[] details = e.getBindingResult().getFieldErrors().stream()
-                .map(fe -> String.format("[%s] %s", fe.getField(), fe.getDefaultMessage()))
-                .toArray(String[]::new);
-        return logAndGetErrorInfo(req, e, false, VALIDATION_ERROR, details);
-    }
+
 }

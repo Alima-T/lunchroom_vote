@@ -34,25 +34,6 @@ public class RestaurantAdminRestController {
         this.service = service;
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<RestaurantTo> createWithLocation(@Valid @RequestBody Restaurant restaurant) {
-        log.info("create {}", restaurant);
-        checkNew(restaurant);
-        RestaurantTo created = RestaurantUtil.createTo(service.create(restaurant));
-        URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path(REST_URL)
-                .buildAndExpand(created.getId()).toUri();
-        return ResponseEntity.created(uriOfNewResource).body(created);
-    }
-
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void update(@Valid @RequestBody Restaurant restaurant) {
-        log.info("update {}", restaurant);
-        assureIdConsistent(restaurant, restaurant.id());
-        service.update(restaurant);
-    }
-
     @GetMapping()
     public List<RestaurantTo> getAll() {
         log.info("getAll");
@@ -76,6 +57,26 @@ public class RestaurantAdminRestController {
         log.info("getMenuOfDay for restaurant {}", id);
         return RestaurantUtil.createToWithMenu(service.getMenuOfDay(id));
     }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<RestaurantTo> create(@Valid @RequestBody Restaurant restaurant) {
+        log.info("create {}", restaurant);
+        checkNew(restaurant);
+        RestaurantTo created = RestaurantUtil.createTo(service.create(restaurant));
+        URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path(REST_URL)
+                .buildAndExpand(created.getId()).toUri();
+        return ResponseEntity.created(uriOfNewResource).body(created);
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@Valid @RequestBody Restaurant restaurant) {
+        log.info("update {}", restaurant);
+        assureIdConsistent(restaurant, restaurant.id());
+        service.update(restaurant);
+    }
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

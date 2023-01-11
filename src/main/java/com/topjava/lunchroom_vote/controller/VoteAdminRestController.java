@@ -67,7 +67,7 @@ public class VoteAdminRestController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<VoteTo> createWithLocation(@RequestParam int userId, @RequestParam int restaurantId) {
+    public ResponseEntity<VoteTo> create(@RequestParam int userId, @RequestParam int restaurantId) {
         log.info("create vote from user {} for restaurant {}", userId, restaurantId);
         VoteTo created = VoteUtil.createTo(voteService.create(userId, restaurantId));
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
