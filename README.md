@@ -1,7 +1,5 @@
 # Lunch voting system
 
-Codacy Badge
-
 ### Technical requirement:
 
 Design and implement a REST API using Hibernate/Spring/SpringMVC (Spring-Boot preferred!) without frontend.
@@ -14,7 +12,7 @@ Design and implement a REST API using Hibernate/Spring/SpringMVC (Spring-Boot pr
 - Users can vote on which restaurant they want to have lunch at
 - Only one vote counted per user
 - If user votes again the same day:
-    * If it is before 11:00 we asume that he changed his mind.
+    * If it is before 11:00 we assume that he changed his mind.
     * If it is after 11:00 then it is too late, vote can't be changed
 - Each restaurant provides new menu each day.
 
@@ -38,6 +36,8 @@ Design and implement a REST API using Hibernate/Spring/SpringMVC (Spring-Boot pr
 endpoints and body, is available at this link. Use desktop Postman</a>
 
 ![img_1.png](img_1.png)
+
+==================
 
 ## Dish
 
