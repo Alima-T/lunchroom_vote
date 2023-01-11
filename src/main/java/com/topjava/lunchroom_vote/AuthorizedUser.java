@@ -3,7 +3,6 @@ package com.topjava.lunchroom_vote;
 import com.topjava.lunchroom_vote.model.User;
 import com.topjava.lunchroom_vote.to.UserTo;
 import com.topjava.lunchroom_vote.util.UserUtil;
-import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -35,12 +34,4 @@ public class AuthorizedUser extends org.springframework.security.core.userdetail
         userTo = newTo;
     }
 
-//    public UserTo getUserTo() {
-//        return userTo;
-//    }
-
-//    @Override
-//    public String toString() {
-//        return userTo.toString();
-//    }
 }

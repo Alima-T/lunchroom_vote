@@ -47,6 +47,7 @@ public class RestaurantService {
         restaurant.setMenu(menuOfDay);
         return restaurant;
     }
+
     @CacheEvict(value = "restaurants", allEntries = true)
     public void delete(int id) {
         checkNotFoundWithId(repository.delete(id) != 0, id);
@@ -68,7 +69,6 @@ public class RestaurantService {
         Assert.notNull(restaurant, "Restaurant can not be empty");
         checkNotFoundWithId(repository.save(restaurant), restaurant.id());
     }
-
 
 
 }

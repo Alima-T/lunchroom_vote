@@ -1,9 +1,9 @@
 package com.topjava.lunchroom_vote.service;
 
+import com.topjava.lunchroom_vote.exception.NotFoundException;
 import com.topjava.lunchroom_vote.model.Dish;
 import com.topjava.lunchroom_vote.repository.DishRepository;
 import com.topjava.lunchroom_vote.repository.RestaurantRepository;
-import com.topjava.lunchroom_vote.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

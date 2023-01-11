@@ -55,7 +55,6 @@ public class DishRestController {
     }
 
 
-
     @GetMapping("/{restaurantId}/by-date")
     public List<DishTo> getAllByDate(@PathVariable int restaurantId,
                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)

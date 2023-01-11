@@ -1,7 +1,7 @@
 package com.topjava.lunchroom_vote.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.topjava.lunchroom_vote.View;
+import com.topjava.lunchroom_vote.json.View;
 import com.topjava.lunchroom_vote.model.User;
 import com.topjava.lunchroom_vote.service.UserService;
 import com.topjava.lunchroom_vote.to.UserTo;

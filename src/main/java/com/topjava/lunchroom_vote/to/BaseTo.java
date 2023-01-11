@@ -2,7 +2,7 @@ package com.topjava.lunchroom_vote.to;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.topjava.lunchroom_vote.HasId;
-import com.topjava.lunchroom_vote.View;
+import com.topjava.lunchroom_vote.json.View;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

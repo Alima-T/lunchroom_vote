@@ -1,11 +1,11 @@
 package com.topjava.lunchroom_vote.to;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.beans.ConstructorProperties;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
 
 /**
  * @Alima-T 12/09/2022

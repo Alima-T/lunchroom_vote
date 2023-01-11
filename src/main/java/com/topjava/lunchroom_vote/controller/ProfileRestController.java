@@ -1,7 +1,7 @@
 package com.topjava.lunchroom_vote.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.topjava.lunchroom_vote.View;
+import com.topjava.lunchroom_vote.json.View;
 import com.topjava.lunchroom_vote.model.User;
 import com.topjava.lunchroom_vote.service.UserService;
 import com.topjava.lunchroom_vote.to.UserTo;
@@ -17,8 +17,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 
-import static com.topjava.lunchroom_vote.util.ValidationUtil.assureIdConsistent;
 import static com.topjava.lunchroom_vote.util.SecurityUtil.authUserId;
+import static com.topjava.lunchroom_vote.util.ValidationUtil.assureIdConsistent;
 
 /**
  * @Alima-T 12/26/2022

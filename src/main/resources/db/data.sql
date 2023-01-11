@@ -31,9 +31,7 @@ VALUES ('Jamies restaurant'),
        ('Choco-loco cafe'),
        ('Forever cafe');
 INSERT INTO dishes (vote_date, description, price, restaurant_id)
-VALUES
-
-       (today(), 'Greek Salad with Olives and Feta', 10.75, 100007),
+VALUES (today(), 'Greek Salad with Olives and Feta', 10.75, 100007),
        (today(), 'Shrimp with Salsa Verde serve in lettuce wraps', 10.25, 100007),
        (today(), 'Ice Lemonade', 1.45, 100007),
        (today(), 'Cappuccino', 2.30, 100007),

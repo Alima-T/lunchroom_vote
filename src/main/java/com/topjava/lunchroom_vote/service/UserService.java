@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +43,7 @@ public class UserService implements UserDetailsService {
         }
         return new AuthorizedUser(user);
     }
+
     @Transactional
     public void update(UserTo userTo) {
         User user = get(userTo.id());
@@ -72,6 +72,7 @@ public class UserService implements UserDetailsService {
         Assert.notNull(user, "User can not be empty");
         prepareAndSave(user);
     }
+
     private User prepareAndSave(User user) {
         return repository.save(prepareToSave(user, passwordEncoder));
     }

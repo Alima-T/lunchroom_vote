@@ -1,8 +1,9 @@
 package com.topjava.lunchroom_vote.model;
 
 import com.topjava.lunchroom_vote.HasId;
-import lombok.*;
-import org.hibernate.Hibernate;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 

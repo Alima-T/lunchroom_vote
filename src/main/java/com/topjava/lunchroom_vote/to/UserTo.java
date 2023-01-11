@@ -1,9 +1,10 @@
 package com.topjava.lunchroom_vote.to;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.topjava.lunchroom_vote.View;
+import com.topjava.lunchroom_vote.json.View;
 import com.topjava.lunchroom_vote.model.Role;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -13,7 +14,6 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Objects;
 import java.util.Set;
 
 /**

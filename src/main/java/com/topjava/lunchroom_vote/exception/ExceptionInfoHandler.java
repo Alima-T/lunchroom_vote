@@ -27,6 +27,17 @@ import static com.topjava.lunchroom_vote.exception.ErrorType.*;
 @Slf4j
 public class ExceptionInfoHandler {
 
+    private static ErrorInfo logAndGetErrorInfo(HttpServletRequest req, Exception e, boolean logException, ErrorType errorType, String... details) {
+        Throwable rootCause = ValidationUtil.getRootCause(e);
+        if (logException) {
+            log.error(errorType + " at request " + req.getRequestURL(), rootCause);
+        } else {
+            log.warn("{} at request  {}: {}", errorType, req.getRequestURL(), rootCause.toString());
+        }
+        return new ErrorInfo(req.getRequestURL(), errorType,
+                details.length != 0 ? details : new String[]{ValidationUtil.getMessage(rootCause)});
+    }
+
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     @ExceptionHandler(NotFoundException.class)
     public ErrorInfo handleError(HttpServletRequest req, NotFoundException e) {
@@ -58,16 +69,5 @@ public class ExceptionInfoHandler {
                 .map(fe -> String.format("[%s] %s", fe.getField(), fe.getDefaultMessage()))
                 .toArray(String[]::new);
         return logAndGetErrorInfo(req, e, false, VALIDATION_ERROR, details);
-    }
-
-    private static ErrorInfo logAndGetErrorInfo(HttpServletRequest req, Exception e, boolean logException, ErrorType errorType, String... details) {
-        Throwable rootCause = ValidationUtil.getRootCause(e);
-        if (logException) {
-            log.error(errorType + " at request " + req.getRequestURL(), rootCause);
-        } else {
-            log.warn("{} at request  {}: {}", errorType, req.getRequestURL(), rootCause.toString());
-        }
-        return new ErrorInfo(req.getRequestURL(), errorType,
-                details.length != 0 ? details : new String[]{ValidationUtil.getMessage(rootCause)});
     }
 }

@@ -12,7 +12,7 @@
     <groupId>com.topjava</groupId>
     <artifactId>lunchroom_vote</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-<!-- war -->
+    <!-- war -->
     <packaging>war</packaging>
     <name>lunchroom_vote</name>
     <description>lunchroom_vote</description>

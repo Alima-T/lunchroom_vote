@@ -1,11 +1,11 @@
 package com.topjava.lunchroom_vote.to;
 
 import com.topjava.lunchroom_vote.model.Dish;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.beans.ConstructorProperties;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @Alima-T 12/09/2022

@@ -1,10 +1,10 @@
 package com.topjava.lunchroom_vote.service;
 
+import com.topjava.lunchroom_vote.exception.OutOfTimeException;
 import com.topjava.lunchroom_vote.model.Vote;
 import com.topjava.lunchroom_vote.repository.RestaurantRepository;
 import com.topjava.lunchroom_vote.repository.UserRepository;
 import com.topjava.lunchroom_vote.repository.VoteRepository;
-import com.topjava.lunchroom_vote.exception.OutOfTimeException;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,12 +25,10 @@ import static com.topjava.lunchroom_vote.util.ValidationUtil.*;
 public class VoteService {
 
     private static final Sort SORT_DATE = Sort.by(Sort.Direction.DESC, "voteDate", "id");
-
-    private Clock clock = Clock.system(ZoneId.systemDefault());
-
     private final VoteRepository repository;
     private final RestaurantRepository restaurantRepository;
     private final UserRepository userRepository;
+    private Clock clock = Clock.system(ZoneId.systemDefault());
 
     public VoteService(VoteRepository repository, RestaurantRepository restaurantRepository, UserRepository userRepository) {
         this.repository = repository;
@@ -77,7 +75,7 @@ public class VoteService {
 
     @Transactional
     public void update(int id, int restaurantId) {
-        Vote vote = repository.findById(id).orElseThrow(() -> new OutOfTimeException("Voting time ended at 11 am, now " + LocalTime.now()                ));
+        Vote vote = repository.findById(id).orElseThrow(() -> new OutOfTimeException("Voting time ended at 11 am, now " + LocalTime.now()));
         Assert.notNull(vote, "Vote can not be empty");
         assureIdConsistent(vote, vote.id());
         votingTimeVerification(clock);

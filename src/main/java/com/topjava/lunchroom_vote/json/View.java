@@ -1,4 +1,4 @@
-package com.topjava.lunchroom_vote;
+package com.topjava.lunchroom_vote.json;
 
 /**
  * @Alima-T 11/27/2022
