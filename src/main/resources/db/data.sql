@@ -1,5 +1,5 @@
 -- DELETE FROM votes;
--- DELETE FROM foods;
+-- DELETE FROM dishes;
 -- DELETE FROM restaurants;
 -- DELETE FROM user_roles;
 -- DELETE FROM users;
