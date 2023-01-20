@@ -1,4 +1,4 @@
-# Lunch voting system
+# Lunch-voting system
 
 ### Technical requirement:
 
