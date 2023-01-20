@@ -10,7 +10,7 @@
     <context:component-scan base-package="com.topjava.lunchroom_vote.**.service"/>
     <context:component-scan base-package="com.topjava.lunchroom_vote.**"/>
 
-    <bean class="com.topjava.spring.lunchroom_vote.json.CustomObjectMapper" id="objectMapper"
+    <bean class="com.topjava.lunchroom_vote.json.CustomObjectMapper" id="objectMapper"
           factory-method="getMapper"/>
 
     <mvc:annotation-driven>
